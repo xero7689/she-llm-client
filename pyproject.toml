@@ -30,6 +30,7 @@ pythonVersion = "3.10"
 
 [tool.uv]
 dev-dependencies = [
+    "commitizen>=3.29.0",
     "faker>=28.4.1",
     "ipdb",
     "pytest-asyncio>=0.24.0",
@@ -39,3 +40,11 @@ dev-dependencies = [
     "python-dotenv>=1.0.1",
     "ruff",
 ]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "pep440"
+version_provider = "pep621"
+update_changelog_on_bump = true
+major_version_zero = true
