@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shz-llm-client"
+version = "0.1.0"
+description = "A client for various LLM services."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Peter Lee", email = "shzlee217@gmail.com" }]
+dependencies = [
+    "aioboto3>=13.1.1",
+    "google-generativeai>=0.8.1",
+    "openai>=1.45.0",
+    "pillow>=10.4.0",
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[tool.pyright]
+exclude = ["**/node_modules", "**/__pycache__"]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.10"
+
+[tool.uv]
+dev-dependencies = [
+    "faker>=28.4.1",
+    "ipdb",
+    "pytest-asyncio>=0.24.0",
+    "pytest-mock>=3.14.0",
+    "pytest-xdist",
+    "pytest>=8.3.3",
+    "python-dotenv>=1.0.1",
+    "ruff",
+]
